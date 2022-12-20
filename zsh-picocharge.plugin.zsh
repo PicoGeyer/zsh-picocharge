@@ -2,6 +2,8 @@ autoload -Uz plug
 
 # completions
 autoload -Uz compinit
+# Match uppercase if lowercase did not match and vice versa
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 zmodload zsh/complist
 for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
   compinit
