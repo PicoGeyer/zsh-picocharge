@@ -1,5 +1,13 @@
 autoload -Uz plug
 
+# completions
+autoload -Uz compinit
+zmodload zsh/complist
+for dump in "${ZDOTDIR:-$HOME}/.zcompdump"(N.mh+24); do
+  compinit
+done
+compinit -C
+
 unsetopt BEEP
 setopt AUTO_CD
 setopt GLOB_DOTS
